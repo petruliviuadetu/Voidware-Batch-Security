@@ -10,3 +10,7 @@ About us: We are a free service. We are like cloudflare but free and program-sid
 
 
 Make a issue if you are banned from the voidware protection.
+
+Program languges we support: Batch
+
+![image](https://github.com/petruliviuadetu/Voidware-Batch-Security/assets/106533596/7ba92dfc-b553-4107-a471-2d94a86b91c3)
