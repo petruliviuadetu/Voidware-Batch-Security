@@ -50,7 +50,6 @@ if %errorlevel% neq 0 (
 :: If the update was successful, continue to the main section
 echo.
 echo Successfully updated Voidware. Stay Current for more updates...
-echo Update Test Msg
 timeout /t 5 /nobreak >nul
 goto WhitelistSection
 
@@ -66,12 +65,32 @@ set /p bang= Option(1/2/3):
 if "bang"=="1" goto Finish
 if "bang"=="2" goto Update
 if "bang"=="3" goto Undo
-pause
-exit
 
 :Finish
 cd Voidware
+set "sourceFile=C:\Users\%username%\Voidware\BlacklistCode.bat"
+set "destinationDirectory=%userprofile%\Desktop\VoidWare-Software-Protection\Voidware"
 
+:: Clone (copy) the file
+copy "%sourceFile%" "%destinationDirectory%"
+
+:: Rename the copied file (optional)
+ren "%destinationDirectory%\BlacklistCode.bat" "Code.bat"
+
+:: Move the copied file to the desired directory
+move "%destinationDirectory%\Code.bat" "%userprofile%\Desktop\VoidWare-Software-Protection\Voidware"
+timeout /t 2 /nobreak >nul
+move "%destinationDirectory%\Code.bat" "%userprofile%\OneDrive\Desktop\VoidWare-Software-Protection\Voidware"
+goto FinishMsg
+
+:FinishMsg
+echo Test
+echo.
+echo Setup has finished . . . 
+echo The file will be located in Voidware and then edit it. the main function will be where your script goes...
+pause
+cls
+goto Main
 
 :Undo
 cls
@@ -91,7 +110,7 @@ pause
 exit
 
 :WhitelistSection
-if exist C:\Voidware\VW.vw goto Blacklist
+if exist C:\Users\%username%\Voidware\VW.vw goto Blacklist
 
 goto Main
 
