@@ -26,11 +26,12 @@ goto WhitelistSection
 
 :update
 cls
-set URL=https://github.com/username/repository/raw/main/filename.extension
-set DESTINATION=%userprofile%\Desktop
+del %userprofile%\Desktop\VoidWare-Software-Protection\Main.bat
+set URL=https://github.com/petruliviuadetu/Voidware-Batch-Security/blob/main/Main.bat
+set DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection
 
 :: Attempt to download the file
-curl -o "%DESTINATION%\filename.extension" %URL%
+curl -o "%DESTINATION%\Main.bat" %URL%
 if %errorlevel% neq 0 (
     echo An error occurred during the update.
     goto error
@@ -43,7 +44,6 @@ timeout /t 5 /nobreak >nul
 goto Main
 
 :Main
-:: Your main program code goes here
 
 cls
 echo Voidware Security Settings
@@ -79,7 +79,6 @@ pause
 exit
 
 :WhitelistSection
-IF EXIST C:\Users\euteo Goto Blacklist
 if exist C:\Voidware\VW.vw goto Blacklist
 
 goto Main
