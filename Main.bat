@@ -50,6 +50,7 @@ if %errorlevel% neq 0 (
 :: If the update was successful, continue to the main section
 echo.
 echo Successfully updated Voidware. Stay Current for more updates...
+echo Update Test Msg
 timeout /t 5 /nobreak >nul
 goto WhitelistSection
 
