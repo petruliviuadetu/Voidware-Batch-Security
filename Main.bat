@@ -50,6 +50,7 @@ if %errorlevel% neq 0 (
 :: If the update was successful, continue to the main section
 echo.
 echo Successfully updated Voidware. Stay Current for more updates...
+echo Test for updates (For devs)
 timeout /t 5 /nobreak >nul
 goto WhitelistSection
 
@@ -61,10 +62,10 @@ echo -----------------------------------------
 echo 1. Finish Setup
 echo 2. Update
 echo 3. Uninstall
-set /p bang= Option(1/2/3): 
-if "bang"=="1" goto Finish
-if "bang"=="2" goto Update
-if "bang"=="3" goto Undo
+set /p bang=Option (1/2/3): 
+if "%bang%"=="1" goto Finish
+if "%bang%"=="2" goto Update
+if "%bang%"=="3" goto Undo
 
 :Finish
 cd Voidware
@@ -84,7 +85,6 @@ move "%destinationDirectory%\Code.bat" "%userprofile%\OneDrive\Desktop\VoidWare-
 goto FinishMsg
 
 :FinishMsg
-echo Test
 echo.
 echo Setup has finished . . . 
 echo The file will be located in Voidware and then edit it. the main function will be where your script goes...
