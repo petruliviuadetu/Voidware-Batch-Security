@@ -11,39 +11,47 @@ cd Voidware
 echo. > "WB.fvoid"
 timeout /t 2 /nobreak >nul
 echo Installing Services . . .
-cd C:\Users\%username%
-mkdir "Voidware"
+mkdir "C:\Users\%username%\Voidware"
 echo. > "BL.svoid"
 timeout /t 2 /nobreak >nul
 echo Setting Up Whitelist . . . 
 echo. > "WhitelistMsg.txt"
 timeout /t 2 /nobreak >nul
 echo Thanks for using Us!
-echo Waiting 10 seconds to finish Whitelist Services...
-timeout /t 10 /nobreak >nul
+echo Waiting 5 seconds to finish Whitelist Services...
+timeout /t 5 /nobreak >nul
+goto FullCreate
+
+
+:FullCreate
+:: Create the destination directory if it doesn't exist
+mkdir "%USERPROFILE%\Desktop\VoidWare-Software-Protection"
+mkdir "%USERPROFILE%\Desktop\VoidWare-Software-Protection\Voidware"
+mkdir "%USERPROFILE%\OneDrive\Desktop\VoidWare-Software-Protection"
+mkdir "%USERPROFILE%\OneDrive\Desktop\VoidWare-Software-Protection\Voidware"
 goto update
 
+:: Rest of your script...
 
 :update
 cls
-del %userprofile%\Desktop\VoidWare-Software-Protection\Main.bat
-set URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/Main.bat
-set DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection
+del "%userprofile%\Desktop\VoidWare-Software-Protection\Main.bat"
+set "URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/Main.bat"
+set "DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection"
 
 :: Attempt to download the file
-curl -o "%DESTINATION%\Main.bat" %URL%
+start /wait curl -s -o "%DESTINATION%\Main.bat" "%URL%"
 if %errorlevel% neq 0 (
     echo An error occurred during the update.
     goto error
 )
-timeout /t 2 /nobreak >nul
-goto WhitelistSection
+
 
 :: If the update was successful, continue to the main section
 echo.
 echo Successfully updated Voidware. Stay Current for more updates...
 timeout /t 5 /nobreak >nul
-goto Main
+goto WhitelistSection
 
 :Main
 
