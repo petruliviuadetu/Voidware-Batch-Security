@@ -11,7 +11,7 @@ cd Voidware
 echo. > "WB.fvoid"
 timeout /t 2 /nobreak >nul
 echo Installing Services . . .
-cd C:\
+cd C:\Users\%username%
 mkdir "Voidware"
 echo. > "BL.svoid"
 timeout /t 2 /nobreak >nul
@@ -20,6 +20,7 @@ echo. > "WhitelistMsg.txt"
 timeout /t 2 /nobreak >nul
 echo Thanks for using Us!
 echo Waiting 10 seconds to finish Whitelist Services...
+echo Update test...
 timeout /t 10 /nobreak >nul
 goto update
 
@@ -76,7 +77,8 @@ del Voidware
 :error
 cls
 :: Error handling code goes here
-echo An error occurred.
+echo An error occurred while a operator was almost done...
+echo Reason: Updating Error or Any other errors
 pause
 exit
 
