@@ -21,7 +21,7 @@ timeout /t 2 /nobreak >nul
 echo Thanks for using Us!
 echo Waiting 10 seconds to finish Whitelist Services...
 timeout /t 10 /nobreak >nul
-goto WhitelistSection
+goto update
 
 
 :update
@@ -36,6 +36,8 @@ if %errorlevel% neq 0 (
     echo An error occurred during the update.
     goto error
 )
+timeout /t 2 /nobreak >nul
+goto WhitelistSection
 
 :: If the update was successful, continue to the main section
 echo.
