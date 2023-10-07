@@ -20,7 +20,6 @@ echo. > "WhitelistMsg.txt"
 timeout /t 2 /nobreak >nul
 echo Thanks for using Us!
 echo Waiting 10 seconds to finish Whitelist Services...
-echo Update test...
 timeout /t 10 /nobreak >nul
 goto update
 
@@ -28,7 +27,7 @@ goto update
 :update
 cls
 del %userprofile%\Desktop\VoidWare-Software-Protection\Main.bat
-set URL=https://github.com/petruliviuadetu/Voidware-Batch-Security/blob/main/Main.bat
+set URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/Main.bat
 set DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection
 
 :: Attempt to download the file
