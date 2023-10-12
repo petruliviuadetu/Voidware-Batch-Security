@@ -41,7 +41,7 @@ goto update
 :update
 cls
 del "%userprofile%\Desktop\VoidWare-Software-Protection\Main.bat"
-del"%userprofile%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat"
+del "%userprofile%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat"
 set "URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/Main.bat"
 set "DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection"
 
