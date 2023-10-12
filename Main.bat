@@ -41,6 +41,7 @@ goto update
 :update
 cls
 del "%userprofile%\Desktop\VoidWare-Software-Protection\Main.bat"
+del"%userprofile%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat"
 set "URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/Main.bat"
 set "DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection"
 
@@ -64,7 +65,7 @@ cls
 echo Voidware Security Settings
 echo -----------------------------------------
 echo Note: This is still beta version so reporting bugs will help me much
-echo IGNORE: Update Test (Developer) (TEST) (WORKS?!!)
+echo IGNORE: Update Test (Developer) (OMG THIS WORKS?!)
 echo -----------------------------------------
 echo 1. Finish Setup
 echo 2. Update
