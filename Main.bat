@@ -1,7 +1,11 @@
 @echo off
 :: Program Security: Voidware
 title Voidware
+set /p bang2="Option: (1: Skip Installation | 2: Start the Installation (Recommanded) ): "
+if "%bang2%"=="1" goto update
+if "%bang2%"=="2" goto LocalInstall
 
+:LocalInstall
 :: Try the update section
 mkdir "Voidware"
 echo Extracting . . .
@@ -41,7 +45,7 @@ set "URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Securi
 set "DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection"
 
 :: Attempt to download the file
-start /wait curl -s -o "%DESTINATION%\Main.bat" "%URL%"
+curl -s -o "%DESTINATION%\Main.bat" "%URL%"
 if %errorlevel% neq 0 (
     echo An error occurred during the update.
     goto error
@@ -60,7 +64,7 @@ cls
 echo Voidware Security Settings
 echo -----------------------------------------
 echo Note: This is still beta version so reporting bugs will help me much
-echo IGNORE: This is a Update Test :D (For Devs)
+echo IGNORE: Update Test (Developer) (TEST)
 echo -----------------------------------------
 echo 1. Finish Setup
 echo 2. Update
