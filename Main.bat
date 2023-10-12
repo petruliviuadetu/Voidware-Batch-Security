@@ -12,6 +12,7 @@ echo. > "WB.fvoid"
 timeout /t 2 /nobreak >nul
 echo Installing Services . . .
 mkdir "C:\Users\%username%\Voidware"
+curl -o "C:\Users\%username%\Voidware\BlacklistCode.bat" "https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/BlacklistCode.bat"
 echo. > "BL.svoid"
 timeout /t 2 /nobreak >nul
 echo Setting Up Whitelist . . . 
@@ -50,7 +51,6 @@ if %errorlevel% neq 0 (
 :: If the update was successful, continue to the main section
 echo.
 echo Successfully updated Voidware. Stay Current for more updates...
-echo Test for updates (For devs)
 timeout /t 5 /nobreak >nul
 goto WhitelistSection
 
@@ -58,6 +58,9 @@ goto WhitelistSection
 
 cls
 echo Voidware Security Settings
+echo -----------------------------------------
+echo Note: This is still beta version so reporting bugs will help me much
+echo IGNORE: This is a Update Test :D (For Devs)
 echo -----------------------------------------
 echo 1. Finish Setup
 echo 2. Update
