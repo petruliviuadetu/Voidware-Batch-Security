@@ -64,7 +64,7 @@ cls
 echo Voidware Security Settings
 echo -----------------------------------------
 echo Note: This is still beta version so reporting bugs will help me much
-echo IGNORE: Update Test (Developer) (TEST)
+echo IGNORE: Update Test (Developer) (TEST) (WORKS?!!)
 echo -----------------------------------------
 echo 1. Finish Setup
 echo 2. Update
