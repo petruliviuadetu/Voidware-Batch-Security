@@ -1,7 +1,7 @@
 @echo off
 :: Program Security: Voidware
 title Voidware
-echo (IGNORE: THIS IS A MASS UPDATE TEST) (SAFE)
+echo (TEST)
 set /p bang2="Option: (1: Skip Installation | 2: Start the Installation (Recommanded) ): "
 if "%bang2%"=="1" goto Main
 if "%bang2%"=="2" goto FullCreate
