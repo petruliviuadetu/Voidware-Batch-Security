@@ -1,7 +1,6 @@
 @echo off
 :: Program Security: Voidware
 title Voidware
-echo New Update (IGNORE (DEVS))
 set /p bang2="Option: (1: Skip Installation | 2: Start the Installation (Recommanded) ): "
 if "%bang2%"=="1" goto Main
 if "%bang2%"=="2" goto FullCreate
@@ -44,16 +43,7 @@ goto LocalInstall
 cls
 ::del "%userprofile%\Desktop\VoidWare-Software-Protection\Main.bat"
 ::del "%userprofile%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat"
-ren "%USERPROFILE%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat" "Backup.bat"
-set "URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/Main.bat"
-set "DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection"
-
-:: Attempt to download the file
-curl -s -o "%DESTINATION%\Main.bat" "%URL%"
-if %errorlevel% neq 0 (
-    echo An error occurred during the update.
-    goto error
-)
+call Update.bat
 
 
 :: If the update was successful, continue to the main section
@@ -137,4 +127,3 @@ echo.
 echo Fix: Email the owner of this program that you have been blocked by a reason. This might fix ur problem!
 pause 
 exit
-
