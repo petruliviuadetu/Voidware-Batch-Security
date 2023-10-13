@@ -2,11 +2,12 @@
 :: Program Security: Voidware
 title Voidware
 set /p bang2="Option: (1: Skip Installation | 2: Start the Installation (Recommanded) ): "
-if "%bang2%"=="1" goto update
-if "%bang2%"=="2" goto LocalInstall
+if "%bang2%"=="1" goto Main
+if "%bang2%"=="2" goto FullCreate
 
 :LocalInstall
 :: Try the update section
+echo New Update Might be here (IGNORE)
 mkdir "Voidware"
 echo Extracting . . .
 timeout /t 2 /nobreak >nul
@@ -25,7 +26,7 @@ timeout /t 2 /nobreak >nul
 echo Thanks for using Us!
 echo Waiting 5 seconds to finish Whitelist Services...
 timeout /t 5 /nobreak >nul
-goto FullCreate
+goto Main
 
 
 :FullCreate
@@ -34,14 +35,15 @@ mkdir "%USERPROFILE%\Desktop\VoidWare-Software-Protection"
 mkdir "%USERPROFILE%\Desktop\VoidWare-Software-Protection\Voidware"
 mkdir "%USERPROFILE%\OneDrive\Desktop\VoidWare-Software-Protection"
 mkdir "%USERPROFILE%\OneDrive\Desktop\VoidWare-Software-Protection\Voidware"
-goto update
+goto LocalInstall
 
 :: Rest of your script...
 
 :update
 cls
-del "%userprofile%\Desktop\VoidWare-Software-Protection\Main.bat"
-del "%userprofile%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat"
+::del "%userprofile%\Desktop\VoidWare-Software-Protection\Main.bat"
+::del "%userprofile%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat"
+ren "%USERPROFILE%\OneDrive\Desktop\VoidWare-Software-Protection\Main.bat" "Backup.bat"
 set "URL=https://raw.githubusercontent.com/petruliviuadetu/Voidware-Batch-Security/main/Main.bat"
 set "DESTINATION=%userprofile%\Desktop\VoidWare-Software-Protection"
 
