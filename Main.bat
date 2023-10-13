@@ -7,7 +7,6 @@ if "%bang2%"=="2" goto FullCreate
 
 :LocalInstall
 :: Try the update section
-echo New Update Might be here (IGNORE)
 mkdir "Voidware"
 echo Extracting . . .
 timeout /t 2 /nobreak >nul
