@@ -1,7 +1,7 @@
 @echo off
 :: Program Security: Voidware
 title Voidware
-echo New Update (IGNORE)
+echo New Update (IGNORE (DEVS))
 set /p bang2="Option: (1: Skip Installation | 2: Start the Installation (Recommanded) ): "
 if "%bang2%"=="1" goto Main
 if "%bang2%"=="2" goto FullCreate
